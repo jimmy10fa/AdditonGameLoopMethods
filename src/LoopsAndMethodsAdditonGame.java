@@ -11,14 +11,38 @@ public class LoopsAndMethodsAdditonGame {
 		System.out.println("Inside the addition game method.");
 		
 		int hardness = 5;
+		int hardnessStep = 2;
+		int score = 0;
 		
 		// Set up my for loop to go through the number of rounds
-		int numberOfRounds = 2;
+		int numberOfRounds = 3;
 		for(int roundNumber = 1; 
 		roundNumber <= numberOfRounds;  
 		roundNumber = roundNumber + 1){
 			System.out.println("Inside the for loop. Round: " + roundNumber);
 			boolean isAnswerCorrect = getAndCheckStudentAnswer(hardness);
+			if(isAnswerCorrect){
+				System.out.print("Your score was " + score + " and is now ");
+				score = score + hardness;
+				System.out.println(score + ".");
+				
+				if(roundNumber<numberOfRounds){
+					System.out.print("Your hardness was " + hardness + " and is now ");
+					hardness = hardness * hardnessStep;
+					System.out.println(hardness + ".");
+				}
+			}else{
+				if(roundNumber<numberOfRounds){
+					System.out.print("Your hardness was " + hardness + " and is now ");
+					if(hardness>5){
+						hardness = hardness / hardnessStep;
+						
+					}
+					System.out.println(hardness + ".");
+					
+				}
+				
+			}
 		}
 	}
 	
