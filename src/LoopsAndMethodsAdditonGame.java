@@ -44,6 +44,8 @@ public class LoopsAndMethodsAdditonGame {
 				
 			}
 		}
+		System.out.println("The game is complete.");
+		System.out.println("Your final score was " + score );
 	}
 	
 	public static boolean getAndCheckStudentAnswer(int hardness) {
